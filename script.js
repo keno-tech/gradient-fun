@@ -23,9 +23,19 @@ function randomHex() {
     document.querySelector("#second").innerHTML = second
 }
 
+function copyHex() {
+    let gradient = `linear-gradient(to right, #${first}, #${second})`
+    navigator.clipboard.writeText(gradient);
+
+}
 
 // finding the "generate" id and adding event listener
 document.querySelector("#generate").addEventListener("click", () => {
     randomHex()
+})
+
+
+document.querySelector("#copy").addEventListener("click", () => {
+    copyHex()
 })
 
